@@ -1,0 +1,1 @@
+- [x] Update style.css to use 4-space indentation instead of 2 spaces for consistency.
