@@ -18,7 +18,7 @@
       <input type="email" name="student_email" required><br>
 
       <label>Phone:</label>
-      <input type="tel" name="student_phone" required><br>
+      <input type="number" name="student_phone" required><br>
 
       <label>Date of Birth:</label>
       <input type="date" name="date_of_birth" required><br>
@@ -71,7 +71,7 @@
       <input type="number" name="year" min="2020" max="2030" required><br>
 
       <label>Preferred Class Time:</label>
-      <input type="time" name="preferred_time" required><br>
+      <input type="time" name="preferred_time" required step="1"><br>
 
       <label>Mode of Study:</label>
       <div class="checkbox-group">
@@ -83,8 +83,33 @@
       <label>Upload Photo:</label>
       <input type="file" name="photo" accept="image/*" required><br>
 
+      <label>Upload PDF:</label>
+      <input type="file" name="pdf_file" accept="application/pdf" required><br>
+
       <label>Registration Date:</label>
       <input type="datetime-local" name="registration_date" required><br>
+
+      <label>Password:</label>
+      <input type="password" name="password" required><br>
+
+      <label>Interests:</label>
+      <input type="search" name="search"><br>
+
+      <label>Personal Website:</label>
+      <input type="url" name="url"><br>
+
+      <label>Interest Level (1-10):</label>
+      <input type="range" name="range" min="1" max="10"><br>
+
+      <label>Favorite Color:</label>
+      <div class="color">
+        <input type="color" id="favorite_color" name="favorite_color" value="#000000">
+        <span id="color_preview"></span>
+      </div>
+
+      <label>Reset Form:</label>
+      <input type="reset" name="reset" value="Reset"><br>
+
       <button type="submit">Register</button>
       </form>
     <p style="text-align: center; margin-top: 15px; color: #666; font-size: 14px;">Please ensure all information is correct before submitting.</p>

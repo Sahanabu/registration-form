@@ -13,25 +13,27 @@
     <h2>College Course Registration Form</h2>
     <p class="welcome-message">Welcome to our college course registration system. Please fill out the form below to register for your course.</p>
     <form id="courseForm" method="POST" action="insert.php" enctype="multipart/form-data">
-      <label for="student_name">Student Name:</label>
-      <input type="text" id="student_name" name="student_name" required><br>
+      <label>Student Name:</label>
+      <input type="text" name="student_name" placeholder="Enter your full name" required><br>
 
-      <label for="student_email">Email:</label>
-      <input type="email" id="student_email" name="student_email" required><br>
+      <label>Email:</label>
+      <input type="email" name="student_email" placeholder="Enter your email address" required><br>
 
-      <label for="student_phone">Phone:</label>
-      <input type="tel" id="student_phone" name="student_phone" required><br>
+      <label>Phone:</label>
+      <input type="tel" name="student_phone" placeholder="Enter your phone number" required><br>
 
-      <label for="date_of_birth">Date of Birth:</label>
-      <input type="date" id="date_of_birth" name="date_of_birth" required><br>
+      <label>Date of Birth:</label>
+      <input type="date" name="date_of_birth" title="Select your date of birth" required><br>
 
-      <label for="gender">Gender:</label>
-      <input type="radio" id="male" name="gender" value="Male" title="Male" required> Male
-      <input type="radio" id="female" name="gender" value="Female" title="Female" required> Female
-      <input type="radio" id="other" name="gender" value="Other" title="Other" required> Other<br>
+      <label>Gender:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" required> <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other" required> <label for="other">Other</label>
+      </div>
 
-      <label for="address">Address:</label>
-      <textarea id="address" name="address" required></textarea><br>
+      <label>Address:</label>
+      <textarea name="address" placeholder="Enter your address" required></textarea><br>
 
       <label for="department">Department:</label>
       <select id="department" name="department" required>
@@ -67,26 +69,43 @@
         <option value="8th">8th</option>
       </select><br>
 
-      <label for="year">Academic Year:</label>
-      <input type="number" id="year" name="year" min="2020" max="2030" required><br>
+      <label>Academic Year:</label>
+      <input type="number" name="year" min="2020" max="2030" placeholder="Enter academic year" required><br>
 
-      <label for="preferred_time">Preferred Class Time:</label>
-      <input type="time" id="preferred_time" name="preferred_time" required><br>
+      <label>Preferred Class Time:</label>
+      <input type="time" name="preferred_time" title="Select your preferred class time" required><br>
 
-      <label for="mode_of_study">Mode of Study:</label>
-      <input type="checkbox" id="online" name="mode_of_study[]" value="Online" title="Online"> Online
-      <input type="checkbox" id="offline" name="mode_of_study[]" value="Offline" title="Offline"> Offline
-      <input type="checkbox" id="hybrid" name="mode_of_study[]" value="Hybrid" title="Hybrid"> Hybrid<br>
+      <label>Mode of Study:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="online" name="mode_of_study[]" value="Online"> <label for="online">Online</label>
+        <input type="checkbox" id="offline" name="mode_of_study[]" value="Offline"> <label for="offline">Offline</label>
+        <input type="checkbox" id="hybrid" name="mode_of_study[]" value="Hybrid"> <label for="hybrid">Hybrid</label>
+      </div>
 
-      <label for="photo">Upload Photo:</label>
-      <input type="file" id="photo" name="photo" accept="image/*" required><br>
+      <label>Upload Photo:</label>
+      <input type="file" name="photo" accept="image/*" title="Upload your photo" required><br>
 
-      <label for="registration_date">Registration Date:</label>
-      <input type="datetime-local" id="registration_date" name="registration_date" required><br>
+      <label>Registration Date:</label>
+      <input type="datetime-local" name="registration_date" title="Select registration date and time" required><br>
+
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Enter a password" required><br>
+
+      <label>Interests:</label>
+      <input type="search" name="search" placeholder="Search your interests" title="Search for your interests"><br>
+
+      <label>Personal Website:</label>
+      <input type="url" name="url" placeholder="https://example.com" title="Enter your personal website URL"><br>
+
+      <label>Interest Level (1-10):</label>
+      <input type="range" name="range" min="1" max="10" title="Select your interest level from 1 to 10"><br>
+
+      <label>Reset Form:</label>
+      <input type="reset" name="reset" value="Reset"><br>
 
       <button type="submit">Register</button>
-    </form>
-    <p class="note-message">Please ensure all information is correct before submitting.</p>
+      </form>
+    <p class="footer-message">Please ensure all information is correct before submitting.</p>
     <a href="view.php">View All Registrations</a>
   </div>
 </body>

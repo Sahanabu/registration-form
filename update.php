@@ -14,6 +14,13 @@ $year = $_POST['year'];
 $preferred_time = $_POST['preferred_time'];
 $mode_of_study = isset($_POST['mode_of_study']) ? implode(',', $_POST['mode_of_study']) : '';
 $registration_date = $_POST['registration_date'];
+$password = $_POST['password'];
+$search = $_POST['search'];
+$url = $_POST['url'];
+$week = $_POST['week'];
+$month = $_POST['month'];
+$range = $_POST['range'];
+$favorite_color = $_POST['favorite_color'];
 
 $photo_path = '';
 if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
@@ -30,11 +37,11 @@ student_name=?, student_email=?, student_phone=?,
 date_of_birth=?, gender=?, address=?,
 department=?, course_name=?, semester=?,
 year=?, preferred_time=?, mode_of_study=?,
-registration_date=?" . ($photo_path ? ", photo=?" : "") . "
+registration_date=?, favorite_color=?" . ($photo_path ? ", photo=?" : "") . "
 WHERE id=?";
 
 $stmt = $conn->prepare($sql);
-$params = [$name, $email, $phone, $date_of_birth, $gender, $address, $department, $course, $semester, $year, $preferred_time, $mode_of_study, $registration_date];
+$params = [$name, $email, $phone, $date_of_birth, $gender, $address, $department, $course, $semester, $year, $preferred_time, $mode_of_study, $registration_date, $favorite_color];
 if ($photo_path) {
   $params[] = $photo_path;
 }

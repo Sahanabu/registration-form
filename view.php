@@ -12,7 +12,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY registration_date DESC");
   <h2>All Course Registrations</h2>
   <table>
     <tr>
-      <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Date of Birth</th><th>Gender</th><th>Address</th><th>Department</th><th>Course</th><th>Semester</th><th>Year</th><th>Preferred Time</th><th>Mode of Study</th><th>Photo</th><th>Registration Date</th><th>Actions</th>
+      <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Date of Birth</th><th>Gender</th><th>Address</th><th>Department</th><th>Course</th><th>Semester</th><th>Year</th><th>Preferred Time</th><th>Mode of Study</th><th>Photo</th><th>PDF File</th><th>Registration Date</th><th>Password</th><th>Interests</th><th>Personal Website</th><th>Interest Level</th><th>Favorite Color</th><th>Actions</th>
     </tr>
     <?php while($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
       <tr>
@@ -30,7 +30,14 @@ $result = $conn->query("SELECT * FROM users ORDER BY registration_date DESC");
         <td><?= $row['preferred_time']; ?></td>
         <td><?= $row['mode_of_study']; ?></td>
         <td><?= $row['photo'] ? "<img src='{$row['photo']}' alt='Photo' width='50'>" : 'No photo'; ?></td>
+        <td><?= $row['pdf_file'] ? "<a href='{$row['pdf_file']}' target='_blank'>View PDF</a>" : 'No PDF'; ?></td>
         <td><?= $row['registration_date']; ?></td>
+        <td><?= str_repeat('*', strlen($row['password'])); ?></td>
+        <td><?= $row['search']; ?></td>
+        <td><?= $row['url']; ?></td>
+        <td><?= $row['interest_level']; ?></td>
+        <td><div style="width: 60px; height: 30px; background-color: <?= $row['favorite_color']; ?>; border: 2px solid #ccc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block;"></div></td>
+
         <td>
           <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> |
           <a href="delete.php?id=<?= $row['id']; ?>" onclick="return confirm('Delete this record?')">Delete</a>

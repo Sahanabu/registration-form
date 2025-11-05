@@ -19,5 +19,10 @@ CREATE TABLE IF NOT EXISTS users (
     mode_of_study TEXT,
     photo VARCHAR(255),
     registration_date DATETIME NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    search VARCHAR(255),
+    url VARCHAR(255),
+    interest_level INT,
+    favorite_color VARCHAR(7),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -10,6 +10,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
   <title>Edit Registration</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="container">
@@ -78,6 +80,25 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="file" name="photo" accept="image/*"><br>
       <label>Registration Date:</label>
       <input type="datetime-local" name="registration_date" value="<?= date('Y-m-d\TH:i', strtotime($row['registration_date'])); ?>" required><br>
+
+      <label>Password:</label>
+      <input type="password" name="password" required><br>
+
+      <label>Interests:</label>
+      <input type="search" name="search"><br>
+
+      <label>Personal Website:</label>
+      <input type="url" name="url"><br>
+
+      <label>Interest Level (1-10):</label>
+      <input type="range" name="range" min="1" max="10"><br>
+
+      <label>Favorite Color:</label>
+      <div class="color">
+        <input type="color" id="favorite_color" name="favorite_color" value="<?= $row['favorite_color'] ?? '#000000'; ?>">
+        <span id="color_preview"></span>
+      </div>
+
       <button type="submit">Update</button>
     </form>
   </div>
