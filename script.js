@@ -35,4 +35,14 @@ $(document).ready(function(){
       this.focus();
     }
   });
+
+  // Validate registration date format
+  $("input[name='registration_date']").on("blur", function(){
+    const date = this.value;
+    const dateRegex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2} (AM|PM)$/i;
+    if(date && !dateRegex.test(date)){
+      alert("Please enter date in YYYY-MM-DD HH:MM AM/PM format (e.g., 2023-10-15 09:30 AM).");
+      this.focus();
+    }
+  });
 });

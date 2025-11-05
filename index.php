@@ -87,7 +87,7 @@
       <input type="file" name="pdf_file" accept="application/pdf" required><br>
 
       <label>Registration Date:</label>
-      <input type="datetime-local" name="registration_date" required><br>
+      <input type="text" name="registration_date" placeholder="YYYY-MM-DD HH:MM AM/PM" required><br>
 
       <label>Password:</label>
       <input type="password" name="password" required><br>
