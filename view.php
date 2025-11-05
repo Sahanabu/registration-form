@@ -1,6 +1,6 @@
 <?php
 include 'db.php';
-$result = $conn->query("SELECT * FROM registrations ORDER BY registration_date DESC");
+$result = $conn->query("SELECT * FROM users ORDER BY registration_date DESC");
 ?>
 <!DOCTYPE html>
 <html>

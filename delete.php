@@ -1,7 +1,8 @@
 <?php
 include 'db.php';
 $id = $_GET['id'];
-$conn->query("DELETE FROM registrations WHERE id=$id");
+$stmt = $conn->prepare("DELETE FROM users WHERE id=?");
+$stmt->execute([$id]);
 header("Location: view.php");
 exit();
 ?>
