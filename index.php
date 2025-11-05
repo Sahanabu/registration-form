@@ -71,7 +71,7 @@
       <input type="number" name="year" min="2020" max="2030" required><br>
 
       <label>Preferred Class Time:</label>
-      <input type="time" name="preferred_time" required step="1"><br>
+      <input type="text" name="preferred_time" placeholder="HH:MM AM/PM" required><br>
 
       <label>Mode of Study:</label>
       <div class="checkbox-group">

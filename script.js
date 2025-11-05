@@ -25,4 +25,14 @@ $(document).ready(function(){
   $("input[name='student_phone']").on("input", function(){
     this.value = this.value.replace(/\D/g, '');
   });
+
+  // Validate preferred time format
+  $("input[name='preferred_time']").on("blur", function(){
+    const time = this.value;
+    const timeRegex = /^(0?[1-9]|1[0-2]):[0-5][0-9] (AM|PM)$/i;
+    if(time && !timeRegex.test(time)){
+      alert("Please enter time in HH:MM AM/PM format (e.g., 09:30 AM).");
+      this.focus();
+    }
+  });
 });
