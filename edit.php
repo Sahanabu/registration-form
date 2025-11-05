@@ -23,7 +23,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <label>Email:</label>
       <input type="email" name="student_email" value="<?= $row['student_email']; ?>" required><br>
       <label>Phone:</label>
-      <input type="tel" name="student_phone" value="<?= $row['student_phone']; ?>" required><br>
+      <input type="number" name="student_phone" value="<?= $row['student_phone']; ?>" required><br>
       <label>Date of Birth:</label>
       <input type="date" name="date_of_birth" value="<?= $row['date_of_birth']; ?>" required><br>
       <label>Gender:</label>
@@ -68,7 +68,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <label>Academic Year:</label>
       <input type="number" name="year" value="<?= $row['year']; ?>" min="2020" max="2030" required><br>
       <label>Preferred Class Time:</label>
-      <input type="time" name="preferred_time" value="<?= $row['preferred_time']; ?>" required><br>
+      <input type="text" name="preferred_time" value="<?= $row['preferred_time']; ?>" placeholder="HH:MM AM/PM" required><br>
       <label>Mode of Study:</label>
       <div class="checkbox-group">
         <?php $modes = explode(',', $row['mode_of_study']); ?>
