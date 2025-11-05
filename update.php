@@ -25,7 +25,7 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
   move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path);
 }
 
-$sql = "UPDATE registrations SET
+$sql = "UPDATE users SET
 student_name=?, student_email=?, student_phone=?,
 date_of_birth=?, gender=?, address=?,
 department=?, course_name=?, semester=?,

@@ -1,7 +1,7 @@
 <?php
 include 'db.php';
 $id = $_GET['id'];
-$stmt = $conn->prepare("SELECT * FROM registrations WHERE id=?");
+$stmt = $conn->prepare("SELECT * FROM users WHERE id=?");
 $stmt->execute([$id]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>

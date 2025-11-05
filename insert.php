@@ -25,7 +25,7 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
   move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path);
 }
 
-$sql = "INSERT INTO registrations (student_name, student_email, student_phone, date_of_birth, gender, address, department, course_name, semester, year, preferred_time, mode_of_study, photo, registration_date)
+$sql = "INSERT INTO users (student_name, student_email, student_phone, date_of_birth, gender, address, department, course_name, semester, year, preferred_time, mode_of_study, photo, registration_date)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
