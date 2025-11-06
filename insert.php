@@ -2,6 +2,11 @@
 include 'db.php';
 
 $name = $_POST['student_name'];
+if (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
+  echo "Error: Student name should only contain alphabets and spaces.";
+  $conn = null;
+  exit;
+}
 $email = $_POST['student_email'];
 $phone = $_POST['student_phone'];
 $date_of_birth = $_POST['date_of_birth'];

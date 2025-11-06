@@ -19,7 +19,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <form method="POST" action="update.php" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?= $row['id']; ?>">
       <label>Student Name:</label>
-      <input type="text" name="student_name" value="<?= $row['student_name']; ?>" required><br>
+      <input type="text" name="student_name" value="<?= $row['student_name']; ?>" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required><br>
       <label>Email:</label>
       <input type="email" name="student_email" value="<?= $row['student_email']; ?>" required><br>
       <label>Phone:</label>

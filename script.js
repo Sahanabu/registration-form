@@ -1,5 +1,11 @@
 $(document).ready(function(){
   $("#courseForm").on("submit", function(){
+    const name = $("input[name='student_name']").val();
+    if(!/^[a-zA-Z\s]+$/.test(name)){
+      alert("Student name should only contain alphabets and spaces.");
+      return false;
+    }
+
     const phone = $("input[name='student_phone']").val();
     if(!/^\d{10}$/.test(phone)){
       alert("Please enter a valid 10-digit phone number.");

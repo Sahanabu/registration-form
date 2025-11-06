@@ -34,7 +34,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY registration_date DESC");
         <td><?= $row['registration_date']; ?></td>
         <td><?= str_repeat('*', strlen($row['password'])); ?></td>
         <td><?= $row['search']; ?></td>
-        <td><?= $row['url']; ?></td>
+        <td><?php if ($row['url']) { echo "<a href='{$row['url']}' target='_blank'>{$row['url']}</a>"; } else { echo 'No URL'; } ?></td>
         <td><?= $row['interest_level']; ?></td>
         <td><div style="width: 60px; height: 30px; background-color: <?= $row['favorite_color']; ?>; border: 2px solid #ccc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block;"></div></td>
 

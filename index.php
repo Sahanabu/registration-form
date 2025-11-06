@@ -12,7 +12,7 @@
     <p style="text-align: center; margin-bottom: 20px; color: #666; font-size: 16px;">Welcome to our college course registration system. Please fill out the form below to register for your course.</p>
     <form id="courseForm" method="POST" action="insert.php" enctype="multipart/form-data">
       <label>Student Name:</label>
-      <input type="text" name="student_name" required><br>
+      <input type="text" name="student_name" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required><br>
 
       <label>Email:</label>
       <input type="email" name="student_email" required><br>
