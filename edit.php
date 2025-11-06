@@ -82,16 +82,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="datetime-local" name="registration_date" value="<?= date('Y-m-d\TH:i', strtotime($row['registration_date'])); ?>" required><br>
 
       <label>Password:</label>
-      <input type="password" name="password" required><br>
+      <input type="password" name="password" value="<?= $row['password']; ?>" required><br>
 
       <label>Interests:</label>
-      <input type="search" name="search"><br>
+      <input type="search" name="search" value="<?= $row['search']; ?>"><br>
 
       <label>Personal Website:</label>
-      <input type="url" name="url"><br>
+      <input type="url" name="url" value="<?= $row['url']; ?>"><br>
 
       <label>Interest Level (1-10):</label>
-      <input type="range" name="range" min="1" max="10"><br>
+      <input type="range" name="range" min="1" max="10" value="<?= $row['interest_level']; ?>"><br>
 
       <label>Favorite Color:</label>
       <div class="color">

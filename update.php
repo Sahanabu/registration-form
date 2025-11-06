@@ -17,8 +17,6 @@ $registration_date = $_POST['registration_date'];
 $password = $_POST['password'];
 $search = $_POST['search'];
 $url = $_POST['url'];
-$week = $_POST['week'];
-$month = $_POST['month'];
 $range = $_POST['range'];
 $favorite_color = $_POST['favorite_color'];
 
